@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="state">
+      <div class="column">
+        <header>Form</header>
+        <div class="form">
+          <div class="formItem">
+            <label>Task:</label>
+            <textarea id="task"></textarea>
+            <div id="taskErrorMessage" class="errorMessage"></div>
+          </div>
+          <div class="formItem">
+            <label>Due Date:</label>
+            <input type="date" id="dueDate" />
+            <div id="dueDateErrorMessage" class="errorMessage"></div>
+          </div>
+          <div class="formItem">
+            <button id="submitBtn">Submit</button>
+          </div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="column">
+        <header>To Do</header>
+        <div class="task-list" id="toDoListContainer"></div>
+      </div>
+      <div class="column">
+        <div class="line"></div>
+        <header>Done</header>
+        <div class="task-list" id="doneListContainer"></div>
+      </div>
+    </div>
+    <div id="modal-dlt" class="modal">
+      <div class="content">
+        <h1>Update task?</h1>
+        <button id="delete-btn" onclick="toggleModal(); deleteTask()">
+          Delete
+        </button>
+        <button id="delete-btn" onclick="toggleModal(); completeTask()">
+          Complete
+        </button>
+      </div>
+    </div>
+    <script src="./app.js" type="text/javascript"></script>
+  </body>
+</html>

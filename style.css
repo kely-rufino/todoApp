@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.state {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.column {
+  width: 300px;
+}
+
+header {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #75c1f7;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ticket {
+  border: 1px solid lightgrey;
+  box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 20%);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.ticket:hover{
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.line{
+  border-top: 4px solid;
+  margin: 10px 0;
+}
+
+.modal{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.87);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content{
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
