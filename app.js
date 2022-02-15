@@ -15,7 +15,9 @@ function deleteTask() {
 function completeTask() {
   taskList = taskList.map((task) => {
     if (task.id === selectedID) {
+      const date = new Date();
       task.done = true;
+      task.doneDate = date.toJSON();
     }
 
     return task;
@@ -87,7 +89,7 @@ function makeTDoneList() {
   doneListContainer.innerHTML = "";
 
   for (let index = 0; index < doneList.length; index++) {
-    doneListContainer.innerHTML += makeTaskCard(doneList[index]);
+    doneListContainer.innerHTML += makeDoneCard(doneList[index]);
   }
 }
 
@@ -96,6 +98,15 @@ function makeTaskCard(data) {
        <div class="ticket" onclick="selectID(${data.id}); toggleModal()">
          <div class="ticketDescription">${data.description}</div>
          <div class="ticketDueDate">${data.dueDate}</div>
+       </div>
+    `;
+}
+
+function makeDoneCard(data) {
+  return `
+       <div class="ticket" onclick="selectID(${data.id}); toggleModal()">
+         <div class="ticketDescription">${data.description}</div>
+         <div class="ticketDueDate">${data.doneDate}</div>
        </div>
     `;
 }
